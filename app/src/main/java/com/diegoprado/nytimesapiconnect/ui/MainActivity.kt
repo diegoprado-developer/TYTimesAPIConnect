@@ -1,7 +1,8 @@
-package com.diegoprado.nytimesapiconnect
+package com.diegoprado.nytimesapiconnect.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.diegoprado.nytimesapiconnect.R
 
 class MainActivity : AppCompatActivity() {
 
