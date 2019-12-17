@@ -1,4 +1,4 @@
-package com.diegoprado.nytimesapiconnect.ui
+package com.diegoprado.nytimesapiconnect.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,9 +1,17 @@
 package com.diegoprado.nytimesapiconnect.data.request
 
+import com.diegoprado.nytimesapiconnect.ui.model.BooksModel
+import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface RequestProvider {
 
-    @GET("lists/names.json")
-    fun getListBooks()
+
+    @GET("lists.json")
+    fun getListBooks(@Query("api-key")api_key: String,
+            @Query ("list")list: String = "hardcover-fiction"): Call<BooksModel>
+
+    @GET("reviews")
+    fun getReviewBooks()
 }
