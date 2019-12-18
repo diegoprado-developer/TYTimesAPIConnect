@@ -1,21 +1,22 @@
 package com.diegoprado.nytimesapiconnect.ui.model
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
- class BooksModel {
+class BooksModel {
 
-         @SerializedName("status")
-         var status: String? = null
+     @SerializedName("status")
+     var status: String? = null
 
      @SerializedName("results")
-     var results: Results? = null
+     var result: List<Results>? = null
 
     class Results{
         @SerializedName("list_name")
         var listName: String? = null
 
-        @SerializedName("books")
-        var books: BooksList? = null
+        @SerializedName("book_details")
+        var books: List<BooksList>? = null
     }
 
     class BooksList{

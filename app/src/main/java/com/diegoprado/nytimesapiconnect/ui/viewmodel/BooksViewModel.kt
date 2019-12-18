@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.diegoprado.nytimesapiconnect.domain.CreateRequest
+import com.diegoprado.nytimesapiconnect.ui.adapter.BooksAdapter
 import com.diegoprado.nytimesapiconnect.ui.model.BooksModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -12,15 +13,16 @@ import retrofit2.Response
 
 class BooksViewModel(application: Application): AndroidViewModel(application) {
 
-    var booksData: MutableLiveData<String> = MutableLiveData()
+    var booksData: MutableLiveData<BooksAdapter> = MutableLiveData()
     val booksRequest = CreateRequest().myRequest
+    var listBook: ArrayList<BooksModel.BooksList?>? = ArrayList()
 
     fun requestProject(): Call<BooksModel> {
         return booksRequest.getListBooks(api_key = "PrjQimThBNMEYoFas49esjDTl6AogMTQ")
     }
 
-    fun showBookList(it: BooksModel?) {
-        booksData.value = it?.status
+    fun showBookList(it: BooksAdapter?) {
+        booksData.value = it
     }
 
     fun createAdapter() {
@@ -33,18 +35,21 @@ class BooksViewModel(application: Application): AndroidViewModel(application) {
 
             override fun onResponse(call: Call<BooksModel>, response: Response<BooksModel>) {
 
-                response.body().let {
+            response.body().let {
+//                    var nameList = it?.result!![1].listName
+//                    var list = it.result!![1].books
 
-                    val lista = it?.status
-
-//                    var adapter = BooksAdapter(listOf(lista))
-
-                    Log.d("vmodel", lista)
-//                    showBookList(it)
+                it?.result?.forEach {
+                    res -> val book = res.books?.get(0)
+                    listBook?.add(book)
                 }
 
+            }
+                var adapter = BooksAdapter(listBook)
+                showBookList(adapter)
             }
 
         })
     }
+
 }

@@ -26,17 +26,13 @@ class ListBooksPresenter : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
 
-//        viewModel.createAdapter(this@MainActivity)
+        viewModel.createAdapter()
 
-        viewModel.booksData.observe(this, Observer<String>{
+        viewModel.booksData.observe(this, Observer<BooksAdapter>{
             it?.let {
-//                inflateList(it.)
-            Log.d("Observer", it)
-
+                inflateList(it)
             }
         })
-
-        BooksViewModel(application).createAdapter()
     }
 
     fun inflateList(adapter: BooksAdapter){
