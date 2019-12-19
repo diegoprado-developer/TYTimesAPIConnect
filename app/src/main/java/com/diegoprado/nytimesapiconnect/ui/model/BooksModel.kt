@@ -15,6 +15,9 @@ class BooksModel {
         @SerializedName("list_name")
         var listName: String? = null
 
+        @SerializedName( "amazon_product_url")
+        var amazonProduct: String? = null
+
         @SerializedName("book_details")
         var books: List<BooksList>? = null
     }

@@ -13,16 +13,14 @@ import retrofit2.Response
 
 class BooksViewModel(application: Application): AndroidViewModel(application) {
 
-    var booksData: MutableLiveData<BooksAdapter> = MutableLiveData()
     val booksRequest = CreateRequest().myRequest
     var listBook: ArrayList<BooksModel.BooksList?>? = ArrayList()
+    var listAmazonLinkBook: ArrayList<BooksModel.Results?>? = ArrayList()
+    var booksData: MutableLiveData<ArrayList<BooksModel.BooksList?>?> = MutableLiveData()
+    var bookAmazonView: MutableLiveData<ArrayList<BooksModel.Results?>?> = MutableLiveData()
 
     fun requestProject(): Call<BooksModel> {
         return booksRequest.getListBooks(api_key = "PrjQimThBNMEYoFas49esjDTl6AogMTQ")
-    }
-
-    fun showBookList(it: BooksAdapter?) {
-        booksData.value = it
     }
 
     fun createAdapter() {
@@ -42,11 +40,12 @@ class BooksViewModel(application: Application): AndroidViewModel(application) {
                 it?.result?.forEach {
                     res -> val book = res.books?.get(0)
                     listBook?.add(book)
+                    listAmazonLinkBook?.add(res)
                 }
-
             }
-                var adapter = BooksAdapter(listBook)
-                showBookList(adapter)
+                bookAmazonView.value = listAmazonLinkBook
+                booksData.value = listBook
+                BooksAdapter(listBook)
             }
 
         })
