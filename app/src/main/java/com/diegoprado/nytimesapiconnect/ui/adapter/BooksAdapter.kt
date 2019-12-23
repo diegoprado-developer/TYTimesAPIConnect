@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.diegoprado.nytimesapiconnect.R
 import com.diegoprado.nytimesapiconnect.ui.model.BooksModel
 
-class BooksAdapter(val books: List<BooksModel.BooksList?>?): RecyclerView.Adapter<BooksAdapter.MyViewHolder>(){
+class BooksAdapter(val books: List<BooksModel.BookDetail?>?): RecyclerView.Adapter<BooksAdapter.MyViewHolder>(){
 
     override fun getItemCount(): Int {
         return books!!.size

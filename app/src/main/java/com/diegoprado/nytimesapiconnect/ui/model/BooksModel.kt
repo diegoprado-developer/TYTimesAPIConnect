@@ -19,10 +19,10 @@ class BooksModel {
         var amazonProduct: String? = null
 
         @SerializedName("book_details")
-        var books: List<BooksList>? = null
+        var books: List<BookDetail>? = null
     }
 
-    class BooksList{
+    class BookDetail{
         @SerializedName("author")
         var authorName: String? = null
 

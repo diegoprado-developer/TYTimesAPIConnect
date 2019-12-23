@@ -14,9 +14,9 @@ import retrofit2.Response
 class BooksViewModel(application: Application): AndroidViewModel(application) {
 
     val booksRequest = CreateRequest().myRequest
-    var listBook: ArrayList<BooksModel.BooksList?>? = ArrayList()
+    var listBook: ArrayList<BooksModel.BookDetail?>? = ArrayList()
     var listAmazonLinkBook: ArrayList<BooksModel.Results?>? = ArrayList()
-    var booksData: MutableLiveData<ArrayList<BooksModel.BooksList?>?> = MutableLiveData()
+    var booksData: MutableLiveData<ArrayList<BooksModel.BookDetail?>?> = MutableLiveData()
     var bookAmazonView: MutableLiveData<ArrayList<BooksModel.Results?>?> = MutableLiveData()
 
     fun requestProject(): Call<BooksModel> {
@@ -34,8 +34,6 @@ class BooksViewModel(application: Application): AndroidViewModel(application) {
             override fun onResponse(call: Call<BooksModel>, response: Response<BooksModel>) {
 
             response.body().let {
-//                    var nameList = it?.result!![1].listName
-//                    var list = it.result!![1].books
 
                 it?.result?.forEach {
                     res -> val book = res.books?.get(0)

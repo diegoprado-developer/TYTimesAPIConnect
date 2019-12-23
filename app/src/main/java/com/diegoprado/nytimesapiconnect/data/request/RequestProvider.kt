@@ -1,5 +1,6 @@
 package com.diegoprado.nytimesapiconnect.data.request
 
+import androidx.lifecycle.Observer
 import com.diegoprado.nytimesapiconnect.ui.model.BooksModel
 import retrofit2.Call
 import retrofit2.http.FormUrlEncoded

@@ -32,7 +32,7 @@ class ListBooksPresenter : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
 
-        viewModel.booksData.observe(this, Observer<ArrayList<BooksModel.BooksList?>?>{
+        viewModel.booksData.observe(this, Observer<ArrayList<BooksModel.BookDetail?>?>{
             it?.let {
 
                 var adapter = BooksAdapter(it)
