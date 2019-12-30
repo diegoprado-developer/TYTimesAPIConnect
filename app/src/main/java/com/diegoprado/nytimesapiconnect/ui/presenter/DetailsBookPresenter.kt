@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.diegoprado.nytimesapiconnect.R
-import com.diegoprado.nytimesapiconnect.ui.adapter.BooksAdapter
-import com.diegoprado.nytimesapiconnect.ui.model.BooksModel
+import com.diegoprado.nytimesapiconnect.data.database.dao.ResultDao
+import com.diegoprado.nytimesapiconnect.data.database.entity.BooksEntity
 import com.diegoprado.nytimesapiconnect.ui.viewmodel.BooksViewModel
 import kotlinx.android.synthetic.main.activity_details_book_presenter.*
 
@@ -19,6 +19,7 @@ class DetailsBookPresenter : AppCompatActivity() {
     private var textDescription: TextView? = null
     private var itemPosition: Int? = null
     private var listLinkBook: String? = null
+    private lateinit var resultDao: ResultDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,16 +36,15 @@ class DetailsBookPresenter : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
 
-        viewModel.booksData.observe(this, Observer<ArrayList<BooksModel.BooksList?>?>{
+        viewModel.booksData.observe(this, Observer<ArrayList<BooksEntity.BookDetail?>?>{
 
            val descBook = it?.get(itemPosition!!)
 
            textDescription?.text = descBook?.descriptionBook
            nameBook.text = descBook?.bookName
-
         })
 
-        viewModel.bookAmazonView.observe(this, Observer<ArrayList<BooksModel.Results?>?>{
+        viewModel.bookAmazonView.observe(this, Observer<ArrayList<BooksEntity.Results?>?>{
 
             listLinkBook = it?.get(itemPosition!!)?.amazonProduct.toString()
 

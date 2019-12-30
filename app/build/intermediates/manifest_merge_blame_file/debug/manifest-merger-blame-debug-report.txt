@@ -53,16 +53,23 @@
 30            </intent-filter>
 31        </activity>
 32
-33        <provider
-33-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
-34            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-34-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
-35            android:authorities="com.diegoprado.nytimesapiconnect.lifecycle-process"
-35-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
-36            android:exported="false"
-36-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
-37            android:multiprocess="true" />
-37-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
-38    </application>
-39
-40</manifest>
+33        <service
+33-->[androidx.room:room-runtime:2.1.0-rc01] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\facdcb281b2d1409cbf5df12e6b8d8fb\room-runtime-2.1.0-rc01\AndroidManifest.xml:25:9-27:40
+34            android:name="androidx.room.MultiInstanceInvalidationService"
+34-->[androidx.room:room-runtime:2.1.0-rc01] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\facdcb281b2d1409cbf5df12e6b8d8fb\room-runtime-2.1.0-rc01\AndroidManifest.xml:26:13-74
+35            android:exported="false" />
+35-->[androidx.room:room-runtime:2.1.0-rc01] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\facdcb281b2d1409cbf5df12e6b8d8fb\room-runtime-2.1.0-rc01\AndroidManifest.xml:27:13-37
+36
+37        <provider
+37-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:23:9-27:43
+38            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+38-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:24:13-79
+39            android:authorities="com.diegoprado.nytimesapiconnect.lifecycle-process"
+39-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:25:13-69
+40            android:exported="false"
+40-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:26:13-37
+41            android:multiprocess="true" />
+41-->[androidx.lifecycle:lifecycle-process:2.0.0] C:\Users\dprado\.gradle\caches\transforms-2\files-2.1\a0f95573de168e156b67452c034a3a78\lifecycle-process-2.0.0\AndroidManifest.xml:27:13-40
+42    </application>
+43
+44</manifest>

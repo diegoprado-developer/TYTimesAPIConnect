@@ -927,7 +927,6 @@ layout abc_tooltip
 layout activity_design_list
 layout activity_details_book_presenter
 layout activity_list_books_presenter
-layout activity_main
 layout custom_dialog
 layout notification_action
 layout notification_action_tombstone
