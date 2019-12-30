@@ -8,7 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.diegoprado.nytimesapiconnect.R
 import com.diegoprado.nytimesapiconnect.data.database.entity.BooksEntity
 
+<<<<<<< HEAD
 class BooksAdapter(val books: List<BooksEntity.BookDetail?>?): RecyclerView.Adapter<BooksAdapter.MyViewHolder>(){
+=======
+class BooksAdapter(val books: List<BooksModel.BookDetail?>?): RecyclerView.Adapter<BooksAdapter.MyViewHolder>(){
+>>>>>>> refactor
 
     override fun getItemCount(): Int {
         return books!!.size

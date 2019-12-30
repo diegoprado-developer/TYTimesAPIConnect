@@ -36,7 +36,11 @@ class DetailsBookPresenter : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
 
+<<<<<<< HEAD
         viewModel.booksData.observe(this, Observer<ArrayList<BooksEntity.BookDetail?>?>{
+=======
+        viewModel.booksData.observe(this, Observer<ArrayList<BooksModel.BookDetail?>?>{
+>>>>>>> refactor
 
            val descBook = it?.get(itemPosition!!)
 
