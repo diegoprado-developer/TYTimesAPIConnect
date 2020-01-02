@@ -34,11 +34,7 @@ class ListBooksPresenter : AppCompatActivity() {
 
         viewModel = ViewModelProviders.of(this).get(BooksViewModel::class.java)
 
-<<<<<<< HEAD
         viewModel.booksData.observe(this, Observer<ArrayList<BooksEntity.BookDetail?>?>{
-=======
-        viewModel.booksData.observe(this, Observer<ArrayList<BooksModel.BookDetail?>?>{
->>>>>>> refactor
             it?.let {
 
                 var adapter = BooksAdapter(it)

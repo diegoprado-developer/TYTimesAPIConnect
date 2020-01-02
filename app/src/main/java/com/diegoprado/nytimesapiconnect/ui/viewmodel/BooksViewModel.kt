@@ -19,7 +19,6 @@ import retrofit2.Response
 class BooksViewModel(application: Application): AndroidViewModel(application) {
 
     val booksRequest = CreateRequest().myRequest
-<<<<<<< HEAD
     var listBook: ArrayList<BooksEntity.BookDetail?>? = ArrayList()
     var listAmazonLinkBook: ArrayList<BooksEntity.Results?>? = ArrayList()
     var booksData: MutableLiveData<ArrayList<BooksEntity.BookDetail?>?> = MutableLiveData()
@@ -27,12 +26,6 @@ class BooksViewModel(application: Application): AndroidViewModel(application) {
     private lateinit var resultDao: ResultDao
     private lateinit var bookDao: BookDao
     private var listResult: ArrayList<BooksEntity.Results>? = ArrayList()
-=======
-    var listBook: ArrayList<BooksModel.BookDetail?>? = ArrayList()
-    var listAmazonLinkBook: ArrayList<BooksModel.Results?>? = ArrayList()
-    var booksData: MutableLiveData<ArrayList<BooksModel.BookDetail?>?> = MutableLiveData()
-    var bookAmazonView: MutableLiveData<ArrayList<BooksModel.Results?>?> = MutableLiveData()
->>>>>>> refactor
 
     fun requestProject(): Call<BooksEntity> {
         return booksRequest.getListBooks(api_key = "PrjQimThBNMEYoFas49esjDTl6AogMTQ")
